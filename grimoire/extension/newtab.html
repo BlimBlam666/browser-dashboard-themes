@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>The Grimoire</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/newtab.css">
+  </head>
+  <body data-accent="ember">
+    <a class="skip-link" href="#grimoire-main">Skip to the Grimoire</a>
+
+    <div class="world" aria-hidden="true">
+      <div class="aurora aurora-one"></div>
+      <div class="aurora aurora-two"></div>
+      <div class="stars"></div>
+      <div id="motes" class="motes"></div>
+    </div>
+
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" role="img">
+          <path d="M32 5 38 22 56 15 44 31 58 42 39 40 32 59 25 40 6 42 20 31 8 15 26 22Z"/>
+          <circle cx="32" cy="32" r="7"/>
+        </svg>
+      </div>
+      <div class="identity">
+        <span class="eyebrow">A private sanctuary between journeys</span>
+        <h1 id="grimoire-title">The Wayfarer’s Grimoire</h1>
+      </div>
+      <div class="topbar-actions">
+        <div class="timekeeper" aria-label="Current date and time">
+          <time id="clock" class="clock">--:--</time>
+          <time id="date" class="date">Awakening…</time>
+        </div>
+        <button id="open-panel" class="icon-button" type="button" title="Open the Familiar’s Panel" aria-label="Open the Familiar’s Panel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Zm3 2H7v11a1 1 0 0 0 1 1h9V7a1 1 0 0 0-1-1H8Zm2 3h5v2h-5V9Zm0 4h5v2h-5v-2Z"/></svg>
+        </button>
+        <button id="open-options" class="icon-button" type="button" title="Grimoire settings" aria-label="Open Grimoire settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m19.2 13 .1-1-.1-1 2-1.5-2-3.4-2.4 1a8 8 0 0 0-1.7-1L14.8 3h-4l-.4 2.6a8 8 0 0 0-1.7 1l-2.4-1-2 3.4 2.1 1.5-.1 1 .1 1-2 1.5 2 3.4 2.4-1a8 8 0 0 0 1.7 1l.4 2.6h4l.4-2.6a8 8 0 0 0 1.7-1l2.4 1 2-3.4-2.2-1.5ZM12.8 18h-1.6l-.3-2.1-.7-.3a6 6 0 0 1-1.1-.7l-.6-.5-2 .8-.8-1.4 1.7-1.3-.1-.8v-.4l.1-.8-1.7-1.3.8-1.4 2 .8.6-.5a6 6 0 0 1 1.1-.7l.7-.3.3-2.1h1.6l.3 2.1.7.3a6 6 0 0 1 1.1.7l.6.5 2-.8.8 1.4-1.7 1.3.1.8v.4l-.1.8 1.7 1.3-.8 1.4-2-.8-.6.5a6 6 0 0 1-1.1.7l-.7.3-.3 2.1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm0 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="grimoire-main" class="dashboard" tabindex="-1">
+      <section class="scrying" aria-labelledby="scrying-heading">
+        <div class="scrying-sigil" aria-hidden="true"></div>
+        <div class="scrying-copy">
+          <span class="section-kicker">Scrying Mirror</span>
+          <h2 id="scrying-heading">Where shall we journey?</h2>
+        </div>
+        <form id="search-form" class="search-form" role="search">
+          <label class="visually-hidden" for="search-input">Search the web or enter an address</label>
+          <input id="search-input" name="query" type="text" autocomplete="off" spellcheck="false" placeholder="Speak a question, destination, or web address…">
+          <button type="submit" aria-label="Begin the journey">
+            <span>Venture</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 5 7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2l-4.6-4.6L13 5Z"/></svg>
+          </button>
+        </form>
+        <span id="search-hint" class="search-hint">Press <kbd>/</kbd> from anywhere to scry</span>
+      </section>
+
+      <div class="book-shell">
+        <div class="book-ridge" aria-hidden="true"></div>
+
+        <section class="page page-left" aria-labelledby="oath-heading">
+          <div class="page-ornament" aria-hidden="true"><span></span></div>
+
+          <section class="folio-section oath-section">
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">Today’s Oath</span>
+                <h2 id="oath-heading">Name the thing that matters.</h2>
+              </div>
+              <span id="oath-status" class="save-status" role="status" aria-live="polite"></span>
+            </div>
+            <label class="visually-hidden" for="oath-input">Your intention for today</label>
+            <textarea id="oath-input" class="oath-input" rows="2" maxlength="180" placeholder="Today, I will…"></textarea>
+          </section>
+
+          <div class="ink-divider" aria-hidden="true"><span>✦</span></div>
+
+          <section class="folio-section focus-section" aria-labelledby="focus-heading">
+            <div class="section-heading compact">
+              <div>
+                <span class="section-kicker">Ritual of Focus</span>
+                <h2 id="focus-heading">Guard a measure of time.</h2>
+              </div>
+              <button id="focus-length" class="text-button" type="button" title="Change focus length">25 min</button>
+            </div>
+            <div class="focus-ritual">
+              <div id="focus-ring" class="focus-ring" role="timer" aria-live="polite" aria-label="25 minutes remaining">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <circle class="ring-track" cx="60" cy="60" r="51"></circle>
+                  <circle id="ring-progress" class="ring-progress" cx="60" cy="60" r="51"></circle>
+                </svg>
+                <div class="focus-time">
+                  <strong id="focus-time">25:00</strong>
+                  <span id="focus-state">ready</span>
+                </div>
+              </div>
+              <div class="focus-actions">
+                <button id="focus-toggle" class="primary-button" type="button">Begin ritual</button>
+                <button id="focus-reset" class="secondary-button" type="button">Reset</button>
+              </div>
+            </div>
+          </section>
+
+          <div class="ink-divider" aria-hidden="true"><span>✦</span></div>
+
+          <section class="folio-section oracle-section" aria-labelledby="oracle-heading">
+            <span class="section-kicker">The Quiet Oracle</span>
+            <h2 id="oracle-heading" class="visually-hidden">Daily wisdom</h2>
+            <blockquote id="oracle-text">The path becomes visible beneath the foot that moves.</blockquote>
+            <p id="oracle-signature">— From the unwritten margins</p>
+          </section>
+        </section>
+
+        <section class="page page-right" aria-labelledby="portals-heading">
+          <div class="page-ornament mirrored" aria-hidden="true"><span></span></div>
+
+          <section class="folio-section portals-section">
+            <div class="section-heading compact">
+              <div>
+                <span class="section-kicker">The Portal Atlas</span>
+                <h2 id="portals-heading">Trusted roads and hidden doors.</h2>
+              </div>
+              <button id="add-portal" class="round-button" type="button" title="Inscribe a new portal" aria-label="Inscribe a new portal">+</button>
+            </div>
+            <div id="portal-grid" class="portal-grid" aria-live="polite"></div>
+            <button id="reveal-bookmarks" class="permission-card" type="button">
+              <span class="permission-icon" aria-hidden="true">⌘</span>
+              <span><strong>Open the Bookmark Vault</strong><small>Optional access, granted only when you choose</small></span>
+            </button>
+            <div id="bookmark-vault" class="bookmark-vault" hidden>
+              <div class="vault-heading">
+                <h3>Bookmark Vault</h3>
+                <button id="hide-bookmarks" class="text-button" type="button">Hide</button>
+              </div>
+              <div id="bookmark-list" class="bookmark-list"></div>
+            </div>
+          </section>
+
+          <div class="ink-divider" aria-hidden="true"><span>✦</span></div>
+
+          <section class="folio-section quests-section" aria-labelledby="quests-heading">
+            <div class="section-heading compact">
+              <div>
+                <span class="section-kicker">Quest Ledger</span>
+                <h2 id="quests-heading">Small deeds shape great roads.</h2>
+              </div>
+              <span id="quest-count" class="counter">0 open</span>
+            </div>
+            <form id="quest-form" class="quest-form">
+              <label class="visually-hidden" for="quest-input">Add a quest</label>
+              <input id="quest-input" type="text" maxlength="120" autocomplete="off" placeholder="Inscribe a new quest…">
+              <button type="submit" aria-label="Add quest">Add</button>
+            </form>
+            <ul id="quest-list" class="quest-list"></ul>
+            <p id="empty-quests" class="empty-state">The road is clear. Choose your next worthy deed.</p>
+            <button id="clear-completed" class="text-button clear-completed" type="button" hidden>Clear completed quests</button>
+          </section>
+
+          <div class="ink-divider" aria-hidden="true"><span>✦</span></div>
+
+          <section class="folio-section roads-section" aria-labelledby="roads-heading">
+            <div class="section-heading compact">
+              <div>
+                <span class="section-kicker">Well-Traveled Roads</span>
+                <h2 id="roads-heading">Paths the world remembers.</h2>
+              </div>
+            </div>
+            <button id="reveal-roads" class="permission-card subtle" type="button">
+              <span class="permission-icon" aria-hidden="true">◈</span>
+              <span><strong>Reveal familiar roads</strong><small>Optionally show your most visited sites</small></span>
+            </button>
+            <div id="roads-list" class="roads-list" hidden></div>
+          </section>
+        </section>
+      </div>
+
+      <footer class="footer-note">
+        <span>All records remain within this browser.</span>
+        <span aria-hidden="true">◆</span>
+        <span><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd> summons the Grimoire.</span>
+      </footer>
+    </main>
+
+    <dialog id="portal-dialog" class="grimoire-dialog">
+      <form id="portal-form" method="dialog">
+        <div class="dialog-crest" aria-hidden="true">✦</div>
+        <span class="section-kicker">Portal Inscription</span>
+        <h2 id="portal-dialog-title">Open a new road</h2>
+        <input id="portal-id" type="hidden">
+        <label for="portal-name">Portal name</label>
+        <input id="portal-name" type="text" maxlength="40" required placeholder="The Great Library">
+        <label for="portal-url">Destination</label>
+        <input id="portal-url" type="url" maxlength="500" required placeholder="https://example.com">
+        <label for="portal-glyph">Glyph</label>
+        <select id="portal-glyph">
+          <option value="star">Star</option>
+          <option value="tower">Tower</option>
+          <option value="scroll">Scroll</option>
+          <option value="anvil">Anvil</option>
+          <option value="compass">Compass</option>
+          <option value="moon">Moon</option>
+          <option value="key">Key</option>
+          <option value="flame">Flame</option>
+        </select>
+        <p id="portal-error" class="form-error" role="alert"></p>
+        <div class="dialog-actions">
+          <button id="delete-portal" class="danger-button" type="button" hidden>Erase</button>
+          <span class="dialog-spacer"></span>
+          <button id="cancel-portal" class="secondary-button" type="button">Cancel</button>
+          <button class="primary-button" type="submit">Inscribe</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <script type="module" src="scripts/newtab.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Bind the Grimoire</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/onboarding.css">
+  </head>
+  <body data-accent="ember">
+    <div class="onboarding-world" aria-hidden="true"><div class="binding-ring"></div><div class="binding-ring inner"></div></div>
+    <main class="onboarding-card">
+      <div class="onboarding-sigil" aria-hidden="true">✦</div>
+      <span class="section-kicker">A quiet place between journeys</span>
+      <h1>Bind the Grimoire</h1>
+      <p class="lead">Every new tab can be a threshold: your trusted roads, present quests, and a place to recover your attention.</p>
+
+      <form id="onboarding-form">
+        <label class="onboarding-field" for="onboarding-name"><span>What shall the Grimoire call you?</span><input id="onboarding-name" type="text" maxlength="40" value="Wayfarer" required></label>
+
+        <fieldset>
+          <legend>Choose its arcane light</legend>
+          <div class="onboarding-accents">
+            <label class="ember"><input type="radio" name="onboarding-accent" value="ember" checked><span><i></i>Ember</span></label>
+            <label class="moon"><input type="radio" name="onboarding-accent" value="moon"><span><i></i>Moon</span></label>
+            <label class="verdant"><input type="radio" name="onboarding-accent" value="verdant"><span><i></i>Verdant</span></label>
+            <label class="amethyst"><input type="radio" name="onboarding-accent" value="amethyst"><span><i></i>Amethyst</span></label>
+          </div>
+        </fieldset>
+
+        <div class="privacy-seal">
+          <span aria-hidden="true">◇</span>
+          <p><strong>Sealed by default.</strong> No accounts, analytics, advertisements, page-reading scripts, or remote code. Optional browser access is requested only when you activate a related feature.</p>
+        </div>
+
+        <button class="bind-button" type="submit">Open the Grimoire <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="small-print">You can change every choice later in the Binding Chamber.</p>
+    </main>
+    <script type="module" src="scripts/onboarding.js"></script>
+  </body>
+</html>

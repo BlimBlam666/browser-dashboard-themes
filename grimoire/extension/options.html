@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Grimoire Settings</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/options.css">
+  </head>
+  <body data-accent="ember">
+    <header class="settings-hero">
+      <div class="settings-sigil" aria-hidden="true">✦</div>
+      <span class="section-kicker">The Binding Chamber</span>
+      <h1>Shape your Grimoire</h1>
+      <p>Its purpose is not to command your attention, but to return it to you.</p>
+      <button id="return-grimoire" class="primary-button" type="button">Return to the Grimoire</button>
+    </header>
+
+    <main class="settings-layout">
+      <nav class="settings-nav" aria-label="Settings sections">
+        <a href="#identity">Identity</a>
+        <a href="#appearance">Appearance</a>
+        <a href="#journeys">Journeys</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#records">Records</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="settings-content">
+        <section id="identity" class="settings-card">
+          <span class="section-kicker">Identity</span>
+          <h2>Name the keeper and the book</h2>
+          <div class="field-grid">
+            <label><span>Keeper name</span><input id="keeper-name" type="text" maxlength="40" placeholder="Wayfarer"></label>
+            <label><span>Grimoire title</span><input id="book-title" type="text" maxlength="70" placeholder="The Wayfarer’s Grimoire"></label>
+          </div>
+        </section>
+
+        <section id="appearance" class="settings-card">
+          <span class="section-kicker">Appearance</span>
+          <h2>Choose the magic in the margins</h2>
+          <fieldset>
+            <legend>Arcane accent</legend>
+            <div class="accent-picker">
+              <label class="accent-option ember"><input type="radio" name="accent" value="ember"><span><i></i><strong>Ember</strong><small>Amber firelight</small></span></label>
+              <label class="accent-option moon"><input type="radio" name="accent" value="moon"><span><i></i><strong>Moon</strong><small>Silver-blue night</small></span></label>
+              <label class="accent-option verdant"><input type="radio" name="accent" value="verdant"><span><i></i><strong>Verdant</strong><small>Ancient green</small></span></label>
+              <label class="accent-option amethyst"><input type="radio" name="accent" value="amethyst"><span><i></i><strong>Amethyst</strong><small>Violet mystery</small></span></label>
+            </div>
+          </fieldset>
+          <div class="setting-row">
+            <div><strong>Atmospheric motion</strong><span>Drifting motes and gentle living light</span></div>
+            <select id="motion-setting" aria-label="Atmospheric motion">
+              <option value="auto">Follow system</option>
+              <option value="full">Full motion</option>
+              <option value="reduced">Reduced motion</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <div><strong>Text size</strong><span>Scale the main parchment text</span></div>
+            <select id="text-scale" aria-label="Text size">
+              <option value="0.92">Compact</option>
+              <option value="1">Comfortable</option>
+              <option value="1.1">Large</option>
+              <option value="1.2">Extra large</option>
+            </select>
+          </div>
+        </section>
+
+        <section id="journeys" class="settings-card">
+          <span class="section-kicker">Journeys</span>
+          <h2>Set the habits of travel</h2>
+          <div class="setting-row">
+            <div><strong>Scrying provider</strong><span>Used when a phrase is not a web address</span></div>
+            <select id="search-engine" aria-label="Search provider">
+              <option value="google">Google</option>
+              <option value="duckduckgo">DuckDuckGo</option>
+              <option value="bing">Bing</option>
+              <option value="brave">Brave Search</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <div><strong>Clock</strong><span>Choose how time is written</span></div>
+            <select id="clock-format" aria-label="Clock format">
+              <option value="12">12-hour</option>
+              <option value="24">24-hour</option>
+            </select>
+          </div>
+          <label class="toggle-row"><span><strong>Show the date</strong><small>Display today beneath the clock</small></span><input id="show-date" type="checkbox" role="switch"></label>
+          <label class="toggle-row"><span><strong>Subtle completion chime</strong><small>Sound only when a focus ritual ends</small></span><input id="sound-enabled" type="checkbox" role="switch"></label>
+        </section>
+
+        <section id="privacy" class="settings-card">
+          <span class="section-kicker">Privacy</span>
+          <h2>Open only the doors you choose</h2>
+          <p class="privacy-promise">The Grimoire contains no analytics, advertising, accounts, page-reading scripts, or remote code. Its records remain in Chrome’s extension storage.</p>
+          <div class="permission-setting">
+            <div><strong>Bookmark Vault</strong><span>Lets the dashboard display your saved bookmarks.</span></div>
+            <button id="bookmark-permission" class="secondary-button" type="button">Check access</button>
+          </div>
+          <div class="permission-setting">
+            <div><strong>Well-Traveled Roads</strong><span>Lets the dashboard show a short list of frequently visited sites.</span></div>
+            <button id="topsites-permission" class="secondary-button" type="button">Check access</button>
+          </div>
+          <p class="permission-note">Chrome may describe these permissions broadly. The extension only reads the minimum information needed to display the features above.</p>
+        </section>
+
+        <section id="records" class="settings-card">
+          <span class="section-kicker">Records</span>
+          <h2>Carry, restore, or release your writings</h2>
+          <div class="record-actions">
+            <button id="export-data" class="secondary-button" type="button">Export Grimoire backup</button>
+            <label class="file-button">Import backup<input id="import-data" type="file" accept="application/json,.json"></label>
+            <button id="reset-data" class="danger-button" type="button">Reset the Grimoire</button>
+          </div>
+          <p id="records-status" class="status-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section id="about" class="settings-card about-card">
+          <span class="section-kicker">About</span>
+          <h2>The Grimoire Dashboard <span>v1.0.0</span></h2>
+          <p>A small sanctuary made for focus, useful roads, and a little wonder. Right-click any web page and choose <em>Inscribe this page as a Portal</em> to add it to the atlas.</p>
+          <p>Keyboard charm: <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd></p>
+        </section>
+      </div>
+    </main>
+
+    <div id="settings-toast" class="toast-region" aria-live="polite"></div>
+    <script type="module" src="scripts/options.js"></script>
+  </body>
+</html>

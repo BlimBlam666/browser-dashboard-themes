@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "The Grimoire Dashboard",
+  "short_name": "Grimoire",
+  "description": "Transform every new tab into a private magical dashboard of portals, quests, focus rituals, notes, and daily wisdom.",
+  "version": "1.0.0",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "contextMenus",
+    "sidePanel",
+    "storage"
+  ],
+  "optional_permissions": [
+    "bookmarks",
+    "topSites"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js",
+    "type": "module"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Open the Familiar's Panel",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "32": "assets/icons/icon32.png"
+    }
+  },
+  "options_page": "options.html",
+  "commands": {
+    "open-grimoire": {
+      "suggested_key": {
+        "default": "Alt+Shift+G",
+        "mac": "MacCtrl+Shift+G"
+      },
+      "description": "Open a new Grimoire tab"
+    }
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'"
+  }
+}

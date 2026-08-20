@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>GRID // CONFIG</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/options.css">
+  </head>
+  <body data-accent="ember">
+    <header class="settings-hero">
+      <div class="settings-sigil" aria-hidden="true">◇</div>
+      <span class="section-kicker">ROOT CONFIGURATION LAYER</span>
+      <h1>GRID // CONFIG</h1>
+      <p>Build the system around your attention. Never surrender your attention to the system.</p>
+      <button id="return-grid" class="primary-button" type="button">RETURN TO NEXUS</button>
+    </header>
+
+    <main class="settings-layout">
+      <nav class="settings-nav" aria-label="Configuration sections">
+        <a href="#identity">Identity</a><a href="#appearance">Display</a><a href="#journeys">Network</a><a href="#privacy">Security</a><a href="#records">Data</a><a href="#about">System</a>
+      </nav>
+
+      <div class="settings-content">
+        <section id="identity" class="settings-card">
+          <span class="section-kicker">IDENTITY</span>
+          <h2>ASSIGN OPERATOR AND DECK ID</h2>
+          <div class="field-grid">
+            <label><span>Operator alias</span><input id="keeper-name" type="text" maxlength="40" placeholder="RUNNER"></label>
+            <label><span>Deck identifier</span><input id="book-title" type="text" maxlength="70" placeholder="GRID // NEXUS"></label>
+          </div>
+        </section>
+
+        <section id="appearance" class="settings-card">
+          <span class="section-kicker">DISPLAY</span>
+          <h2>SELECT VISUAL PROTOCOL</h2>
+          <fieldset>
+            <legend>Signal spectrum</legend>
+            <div class="accent-picker">
+              <label class="accent-option ember"><input type="radio" name="accent" value="ember"><span><i></i><strong>CYAN</strong><small>CORE SIGNAL</small></span></label>
+              <label class="accent-option moon"><input type="radio" name="accent" value="moon"><span><i></i><strong>MAGENTA</strong><small>GHOST MODE</small></span></label>
+              <label class="accent-option verdant"><input type="radio" name="accent" value="verdant"><span><i></i><strong>ACID</strong><small>TOXIC VECTOR</small></span></label>
+              <label class="accent-option amethyst"><input type="radio" name="accent" value="amethyst"><span><i></i><strong>AMBER</strong><small>OVERDRIVE</small></span></label>
+            </div>
+          </fieldset>
+          <div class="setting-row"><div><strong>Signal animation</strong><span>Grid motion, data rain, pulses, and scan effects</span></div><select id="motion-setting" aria-label="Signal animation"><option value="auto">SYSTEM DEFAULT</option><option value="full">FULL SIGNAL</option><option value="reduced">STATIC MODE</option></select></div>
+          <div class="setting-row"><div><strong>Terminal scale</strong><span>Scale all interface text</span></div><select id="text-scale" aria-label="Terminal scale"><option value="0.92">COMPACT</option><option value="1">STANDARD</option><option value="1.1">LARGE</option><option value="1.2">XL</option></select></div>
+        </section>
+
+        <section id="journeys" class="settings-card">
+          <span class="section-kicker">NETWORK</span>
+          <h2>ROUTING AND TIME PROTOCOLS</h2>
+          <div class="setting-row"><div><strong>Query provider</strong><span>Handles inputs that are not direct endpoints</span></div><select id="search-engine" aria-label="Search provider"><option value="google">GOOGLE</option><option value="duckduckgo">DUCKDUCKGO</option><option value="bing">BING</option><option value="brave">BRAVE</option></select></div>
+          <div class="setting-row"><div><strong>Clock encoding</strong><span>Select local time format</span></div><select id="clock-format" aria-label="Clock format"><option value="12">12-HOUR</option><option value="24">24-HOUR</option></select></div>
+          <label class="toggle-row"><span><strong>Display date stamp</strong><small>Show local date below the clock</small></span><input id="show-date" type="checkbox" role="switch"></label>
+          <label class="toggle-row"><span><strong>Completion signal</strong><small>Three-tone alert when a focus cycle terminates</small></span><input id="sound-enabled" type="checkbox" role="switch"></label>
+        </section>
+
+        <section id="privacy" class="settings-card">
+          <span class="section-kicker">SECURITY</span>
+          <h2>PERMISSION FIREWALL</h2>
+          <p class="privacy-promise">ZERO TELEMETRY. GRID contains no analytics, advertising, accounts, page-reading scripts, remote executable code, or host permissions. Operational data remains inside Chrome’s extension storage.</p>
+          <div class="permission-setting"><div><strong>Bookmark Archive</strong><span>Read recent bookmark titles and endpoints for local display.</span></div><button id="bookmark-permission" class="secondary-button" type="button">CHECK ACCESS</button></div>
+          <div class="permission-setting"><div><strong>Route Cache</strong><span>Read Chrome’s frequent-site index for local display.</span></div><button id="topsites-permission" class="secondary-button" type="button">CHECK ACCESS</button></div>
+          <p class="permission-note">Both data channels are optional, user-initiated, locally rendered, and revocable here at any time.</p>
+        </section>
+
+        <section id="records" class="settings-card">
+          <span class="section-kicker">DATA CONTROL</span>
+          <h2>EXPORT, RESTORE, OR ZERO LOCAL STATE</h2>
+          <div class="record-actions">
+            <button id="export-data" class="secondary-button" type="button">EXPORT BACKUP</button>
+            <label class="file-button">IMPORT BACKUP<input id="import-data" type="file" accept="application/json,.json"></label>
+            <button id="reset-data" class="danger-button" type="button">FACTORY RESET</button>
+          </div>
+          <p id="records-status" class="status-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section id="about" class="settings-card about-card">
+          <span class="section-kicker">SYSTEM</span>
+          <h2>GRID // CYBERDECK <span>v1.0.0</span></h2>
+          <p>A private local interface for routes, operations, protected focus, and reclaimed attention. Right-click any ordinary webpage and select <em>Register this page as a GRID Node</em>.</p>
+          <p>GLOBAL COMMAND: <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>X</kbd></p>
+        </section>
+      </div>
+    </main>
+
+    <div id="settings-toast" class="toast-region" aria-live="polite"></div>
+    <script type="module" src="scripts/options.js"></script>
+  </body>
+</html>

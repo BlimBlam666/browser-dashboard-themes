@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "GRID // Neon Browser Theme",
+  "short_name": "GRID Theme",
+  "description": "An optional black, cyan, and magenta Chrome frame for GRID // Cyberdeck Dashboard.",
+  "version": "1.0.0",
+  "theme": {
+    "colors": {
+      "frame": [3, 10, 13],
+      "frame_inactive": [5, 8, 10],
+      "toolbar": [4, 15, 19],
+      "tab_text": [183, 255, 241],
+      "tab_background_text": [89, 147, 138],
+      "bookmark_text": [161, 232, 220],
+      "ntp_background": [2, 7, 9],
+      "ntp_text": [185, 255, 241],
+      "button_background": [5, 19, 24]
+    },
+    "tints": {
+      "buttons": [0.49, 0.82, 0.62],
+      "frame": [0.51, 0.58, 0.08],
+      "frame_inactive": [0.51, 0.22, 0.05]
+    },
+    "properties": {
+      "ntp_logo_alternate": 1
+    }
+  }
+}

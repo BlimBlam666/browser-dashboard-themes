@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>GRID // NEXUS</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/newtab.css">
+  </head>
+  <body data-accent="ember">
+    <a class="skip-link" href="#grid-main">Skip to terminal</a>
+
+    <div class="world" aria-hidden="true">
+      <div class="grid-plane"></div>
+      <div class="data-rain"></div>
+      <div class="scanlines"></div>
+      <div id="motes" class="motes"></div>
+    </div>
+
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <path d="M32 3 57 17v30L32 61 7 47V17L32 3Z"/>
+          <path d="m32 13 7 12 12 7-12 7-7 12-7-12-12-7 12-7 7-12Z"/>
+          <circle cx="32" cy="32" r="4"/>
+        </svg>
+      </div>
+      <div class="identity">
+        <span class="eyebrow">LOCAL DECK // PRIVATE SESSION</span>
+        <h1 id="grid-title">GRID // NEXUS</h1>
+      </div>
+      <div class="topbar-actions">
+        <div class="system-live" aria-label="Local system online"><i></i><span>LOCAL</span></div>
+        <div class="timekeeper" aria-label="Current date and time">
+          <time id="clock" class="clock">--:--</time>
+          <time id="date" class="date">BOOTING…</time>
+        </div>
+        <button id="open-panel" class="icon-button" type="button" title="Open Ghost Deck" aria-label="Open Ghost Deck">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4V4Zm2 2v12h12V6H6Zm2 2h4v2H8V8Zm0 4h8v2H8v-2Zm0 4h6v1H8v-1Z"/></svg>
+        </button>
+        <button id="open-options" class="icon-button" type="button" title="Open system configuration" aria-label="Open system configuration">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2h2l.5 3a8 8 0 0 1 2 .8l2.5-1.7 1.4 1.4-1.7 2.5a8 8 0 0 1 .8 2l3 .5v2l-3 .5a8 8 0 0 1-.8 2l1.7 2.5-1.4 1.4-2.5-1.7a8 8 0 0 1-2 .8l-.5 3h-2l-.5-3a8 8 0 0 1-2-.8L6 19l-1.4-1.4L6.3 15a8 8 0 0 1-.8-2l-3-.5v-2l3-.5a8 8 0 0 1 .8-2L4.6 5.5 6 4.1l2.5 1.7a8 8 0 0 1 2-.8L11 2Zm1 6.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="grid-main" class="dashboard" tabindex="-1">
+      <section class="scrying" aria-labelledby="scrying-heading">
+        <div class="scrying-sigil" aria-hidden="true"><span>&gt;_</span></div>
+        <div class="scrying-copy">
+          <span class="section-kicker">NET.RUN</span>
+          <h2 id="scrying-heading">ROUTE // QUERY</h2>
+        </div>
+        <form id="search-form" class="search-form" role="search">
+          <label class="visually-hidden" for="search-input">Search the net or enter an address</label>
+          <span class="terminal-prompt" aria-hidden="true">root@nexus:~$</span>
+          <input id="search-input" name="query" type="text" autocomplete="off" spellcheck="false" placeholder="query, protocol, or endpoint…">
+          <button type="submit" aria-label="Execute route">
+            <span>EXECUTE</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 5 7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2l-4.6-4.6L13 5Z"/></svg>
+          </button>
+        </form>
+        <span id="search-hint" class="search-hint"><kbd>/</kbd> COMMAND FOCUS</span>
+      </section>
+
+      <div class="book-shell">
+        <div class="book-ridge" aria-hidden="true"></div>
+
+        <section class="page page-left" aria-labelledby="oath-heading">
+          <div class="page-ornament" aria-hidden="true"><span></span></div>
+
+          <section class="folio-section oath-section">
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">PRIMARY DIRECTIVE</span>
+                <h2 id="oath-heading">Define the mission that matters now.</h2>
+              </div>
+              <span id="oath-status" class="save-status" role="status" aria-live="polite"></span>
+            </div>
+            <label class="visually-hidden" for="oath-input">Primary directive for today</label>
+            <textarea id="oath-input" class="oath-input" rows="2" maxlength="180" placeholder="DIRECTIVE: Today I will…"></textarea>
+          </section>
+
+          <div class="ink-divider" aria-hidden="true"><span>01</span></div>
+
+          <section class="folio-section focus-section" aria-labelledby="focus-heading">
+            <div class="section-heading compact">
+              <div>
+                <span class="section-kicker">FOCUS PROTOCOL</span>
+                <h2 id="focus-heading">Isolate a protected processing cycle.</h2>
+              </div>
+              <button id="focus-length" class="text-button" type="button" title="Change cycle length">25 MIN</button>
+            </div>
+            <div class="focus-ritual">
+              <div id="focus-ring" class="focus-ring" role="timer" aria-live="polite" aria-label="25 minutes remaining">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <circle class="ring-track" cx="60" cy="60" r="51"></circle>
+                  <circle id="ring-progress" class="ring-progress" cx="60" cy="60" r="51"></circle>
+                </svg>
+                <div class="focus-time">
+                  <strong id="focus-time">25:00</strong>
+                  <span id="focus-state">STANDBY</span>
+                </div>
+              </div>
+              <div class="focus-actions">
+                <button id="focus-toggle" class="primary-button" type="button">INITIATE</button>
+                <button id="focus-reset" class="secondary-button" type="button">RESET</button>
+              </div>
+            </div>
+          </section>
+
+          <div class="ink-divider" aria-hidden="true"><span>10</span></div>
+
+          <section class="folio-section oracle-section" aria-labelledby="oracle-heading">
+            <span class="section-kicker">SIGNAL FRAGMENT</span>
+            <h2 id="oracle-heading" class="visually-hidden">Daily system signal</h2>
+            <blockquote id="oracle-text">Clarity is bandwidth reclaimed from noise.</blockquote>
+            <p id="oracle-signature">// LOCAL HEURISTIC ENGINE</p>
+          </section>
+        </section>
+
+        <section class="page page-right" aria-labelledby="portals-heading">
+          <div class="page-ornament mirrored" aria-hidden="true"><span></span></div>
+
+          <section class="folio-section portals-section">
+            <div class="section-heading compact">
+              <div>
+                <span class="section-kicker">NODE MATRIX</span>
+                <h2 id="portals-heading">Registered endpoints and trusted routes.</h2>
+              </div>
+              <button id="add-portal" class="round-button" type="button" title="Register a new node" aria-label="Register a new node">+</button>
+            </div>
+            <div id="portal-grid" class="portal-grid" aria-live="polite"></div>
+            <button id="reveal-bookmarks" class="permission-card" type="button">
+              <span class="permission-icon" aria-hidden="true">DB</span>
+              <span><strong>MOUNT BOOKMARK ARCHIVE</strong><small>Optional read access // user authorized only</small></span>
+            </button>
+            <div id="bookmark-vault" class="bookmark-vault" hidden>
+              <div class="vault-heading">
+                <h3>BOOKMARK ARCHIVE</h3>
+                <button id="hide-bookmarks" class="text-button" type="button">UNMOUNT</button>
+              </div>
+              <div id="bookmark-list" class="bookmark-list"></div>
+            </div>
+          </section>
+
+          <div class="ink-divider" aria-hidden="true"><span>11</span></div>
+
+          <section class="folio-section quests-section" aria-labelledby="quests-heading">
+            <div class="section-heading compact">
+              <div>
+                <span class="section-kicker">OPS QUEUE</span>
+                <h2 id="quests-heading">Convert intention into executable steps.</h2>
+              </div>
+              <span id="quest-count" class="counter">0 ACTIVE</span>
+            </div>
+            <form id="quest-form" class="quest-form">
+              <label class="visually-hidden" for="quest-input">Add an operation</label>
+              <input id="quest-input" type="text" maxlength="120" autocomplete="off" placeholder="QUEUE NEW OPERATION…">
+              <button type="submit" aria-label="Add operation">QUEUE</button>
+            </form>
+            <ul id="quest-list" class="quest-list"></ul>
+            <p id="empty-quests" class="empty-state">QUEUE EMPTY // SYSTEM READY</p>
+            <button id="clear-completed" class="text-button clear-completed" type="button" hidden>PURGE COMPLETED</button>
+          </section>
+
+          <div class="ink-divider" aria-hidden="true"><span>00</span></div>
+
+          <section class="folio-section roads-section" aria-labelledby="roads-heading">
+            <div class="section-heading compact">
+              <div>
+                <span class="section-kicker">FREQUENT ROUTES</span>
+                <h2 id="roads-heading">Locally remembered network paths.</h2>
+              </div>
+            </div>
+            <button id="reveal-roads" class="permission-card subtle" type="button">
+              <span class="permission-icon" aria-hidden="true">RX</span>
+              <span><strong>LOAD ROUTE CACHE</strong><small>Optional access to Chrome’s frequent-site index</small></span>
+            </button>
+            <div id="roads-list" class="roads-list" hidden></div>
+          </section>
+        </section>
+      </div>
+
+      <footer class="footer-note">
+        <span>LOCAL STORAGE // ZERO TELEMETRY</span>
+        <span aria-hidden="true">◆</span>
+        <span><kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>X</kbd> OPENS GRID</span>
+      </footer>
+    </main>
+
+    <dialog id="portal-dialog" class="grid-dialog" aria-labelledby="portal-dialog-title">
+      <form id="portal-form" method="dialog">
+        <div class="dialog-crest" aria-hidden="true">◇</div>
+        <span class="section-kicker">NODE REGISTRATION</span>
+        <h2 id="portal-dialog-title">Register new endpoint</h2>
+        <input id="portal-id" type="hidden">
+        <label for="portal-name">Node alias</label>
+        <input id="portal-name" type="text" maxlength="40" required placeholder="ARCHIVE_01">
+        <label for="portal-url">Endpoint</label>
+        <input id="portal-url" type="url" maxlength="500" required placeholder="https://example.com">
+        <label for="portal-glyph">Node glyph</label>
+        <select id="portal-glyph">
+          <option value="star">Pulse</option>
+          <option value="tower">Citadel</option>
+          <option value="scroll">Archive</option>
+          <option value="anvil">Forge</option>
+          <option value="compass">Navigator</option>
+          <option value="moon">Lunar</option>
+          <option value="key">Access Key</option>
+          <option value="flame">Hotline</option>
+        </select>
+        <p id="portal-error" class="form-error" role="alert"></p>
+        <div class="dialog-actions">
+          <button id="delete-portal" class="danger-button" type="button" hidden>DELETE</button>
+          <span class="dialog-spacer"></span>
+          <button id="cancel-portal" class="secondary-button" type="button">ABORT</button>
+          <button class="primary-button" type="submit">REGISTER</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <script type="module" src="scripts/newtab.js"></script>
+  </body>
+</html>

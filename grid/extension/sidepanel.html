@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Ghost Deck</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/sidepanel.css">
+  </head>
+  <body data-accent="ember">
+    <header class="panel-header">
+      <div class="familiar-orb" aria-hidden="true"><span></span></div>
+      <div>
+        <span class="section-kicker">SIDECAR // ACTIVE</span>
+        <h1>GHOST DECK</h1>
+      </div>
+      <button id="panel-newtab" class="icon-button" type="button" title="Open full GRID terminal" aria-label="Open full GRID terminal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4V4Zm2 2v12h12V6H6Zm2 2h4v2H8V8Zm0 4h8v2H8v-2Zm0 4h6v1H8v-1Z"/></svg>
+      </button>
+    </header>
+
+    <nav class="panel-tabs" aria-label="Ghost Deck sections">
+      <button class="panel-tab active" type="button" data-panel="quests" aria-selected="true">OPS</button>
+      <button class="panel-tab" type="button" data-panel="note" aria-selected="false">BUFFER</button>
+      <button class="panel-tab" type="button" data-panel="focus" aria-selected="false">FOCUS</button>
+    </nav>
+
+    <main>
+      <section id="panel-quests" class="panel-view active" aria-labelledby="panel-quests-title">
+        <div class="panel-section-heading">
+          <div><span class="section-kicker">OPS QUEUE</span><h2 id="panel-quests-title">ACTIVE PROCESSES</h2></div>
+          <span id="panel-quest-count" class="counter">0</span>
+        </div>
+        <form id="panel-quest-form" class="panel-quest-form">
+          <label class="visually-hidden" for="panel-quest-input">Add an operation</label>
+          <input id="panel-quest-input" maxlength="120" autocomplete="off" placeholder="QUEUE OPERATION…">
+          <button type="submit" aria-label="Queue operation">+</button>
+        </form>
+        <ul id="panel-quest-list" class="panel-quest-list"></ul>
+        <p id="panel-empty-quests" class="panel-empty">NO ACTIVE PROCESSES</p>
+      </section>
+
+      <section id="panel-note" class="panel-view" aria-labelledby="panel-note-title" hidden>
+        <div class="panel-section-heading">
+          <div><span class="section-kicker">LOCAL MEMORY</span><h2 id="panel-note-title">SCRATCH BUFFER</h2></div>
+          <span id="note-status" class="save-status" role="status" aria-live="polite"></span>
+        </div>
+        <label class="visually-hidden" for="scratchpad">Local scratch buffer</label>
+        <textarea id="scratchpad" class="scratchpad" maxlength="6000" placeholder="CAPTURE TRANSIENT DATA…"></textarea>
+        <div class="note-footer"><span id="note-count">0 / 6000</span><button id="clear-note" class="text-button" type="button">PURGE</button></div>
+      </section>
+
+      <section id="panel-focus" class="panel-view" aria-labelledby="panel-focus-title" hidden>
+        <div class="panel-section-heading">
+          <div><span class="section-kicker">FOCUS PROTOCOL</span><h2 id="panel-focus-title">PROTECTED CYCLE</h2></div>
+        </div>
+        <div class="panel-focus-orb" role="timer" aria-live="polite">
+          <span id="panel-focus-time">25:00</span>
+          <small id="panel-focus-state">STANDBY</small>
+        </div>
+        <div class="panel-focus-actions">
+          <button id="panel-focus-toggle" class="primary-button" type="button">INITIATE</button>
+          <button id="panel-focus-reset" class="secondary-button" type="button">RESET</button>
+        </div>
+        <div class="duration-row" aria-label="Focus duration">
+          <button type="button" data-minutes="15">15</button>
+          <button type="button" data-minutes="25" class="active">25</button>
+          <button type="button" data-minutes="45">45</button>
+          <button type="button" data-minutes="60">60</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="panel-footer">
+      <span id="panel-oracle">Clarity is bandwidth reclaimed from noise.</span>
+      <button id="panel-options" class="text-button" type="button">CONFIG</button>
+    </footer>
+    <div id="panel-toast" class="toast-region" aria-live="polite"></div>
+    <script type="module" src="scripts/sidepanel.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "grid-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "validate": "node tests/validate-extension.js"
+  }
+}

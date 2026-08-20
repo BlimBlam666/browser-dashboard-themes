@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="night" cx="50%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#273034"/>
+      <stop offset="1" stop-color="#090b0d"/>
+    </radialGradient>
+    <linearGradient id="leather" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#55321f"/>
+      <stop offset=".55" stop-color="#2c1b14"/>
+      <stop offset="1" stop-color="#160f0c"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#ffe5a5"/>
+      <stop offset=".45" stop-color="#d5a44f"/>
+      <stop offset="1" stop-color="#75431f"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <circle cx="256" cy="256" r="240" fill="url(#night)" stroke="#8d6335" stroke-width="8"/>
+  <circle cx="256" cy="256" r="218" fill="none" stroke="#d5a44f" stroke-opacity=".28" stroke-width="3"/>
+  <path d="M116 126c0-22 18-40 40-40h219c17 0 31 14 31 31v278H170c-30 0-54-24-54-54V126Z" fill="url(#leather)" stroke="#d5a44f" stroke-width="9"/>
+  <path d="M170 86v309M145 119h25M145 362h25" fill="none" stroke="#d5a44f" stroke-opacity=".75" stroke-width="8"/>
+  <path d="M170 395h236v28H170c-30 0-54-18-54-41s24-41 54-41h236" fill="#d6be8e" stroke="#5c3b25" stroke-width="8"/>
+  <path d="M174 363h219M174 379h208" stroke="#8c6b46" stroke-width="3"/>
+  <path d="m284 138 22 70 70 22-70 22-22 70-22-70-70-22 70-22 22-70Z" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linejoin="round" filter="url(#glow)"/>
+  <circle cx="284" cy="230" r="24" fill="#19140f" stroke="#f0c974" stroke-width="8"/>
+  <circle cx="284" cy="230" r="7" fill="#ffe9a7" filter="url(#glow)"/>
+  <path d="M222 123h124M222 337h124" stroke="#d5a44f" stroke-opacity=".35" stroke-width="4"/>
+</svg>

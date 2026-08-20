@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="void" cx="50%" cy="42%" r="70%"><stop offset="0" stop-color="#13242a"/><stop offset="1" stop-color="#030609"/></radialGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9dffea"/><stop offset=".45" stop-color="#20e6c5"/><stop offset="1" stop-color="#009bba"/></linearGradient>
+    <linearGradient id="hot" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ff3da6"/><stop offset="1" stop-color="#9e5cff"/></linearGradient>
+    <filter id="cyanGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <circle cx="256" cy="256" r="240" fill="url(#void)" stroke="#20e6c5" stroke-width="7"/>
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#20e6c5" stroke-opacity=".28" stroke-width="3" stroke-dasharray="8 13"/>
+  <path d="M256 70 417 163v186L256 442 95 349V163L256 70Z" fill="#071015" stroke="url(#neon)" stroke-width="10"/>
+  <path d="M256 104 387 180v152L256 408 125 332V180l131-76Z" fill="none" stroke="#20e6c5" stroke-opacity=".28" stroke-width="4"/>
+  <g fill="none" stroke="#20e6c5" stroke-width="5" stroke-linecap="square">
+    <path d="M95 211H54m41 91H54M417 211h41m-41 91h41M210 97V54m92 43V54M210 415v43m92-43v43"/>
+    <path d="M141 189h43l25 25M371 189h-43l-25 25M141 323h43l25-25M371 323h-43l-25-25" opacity=".58"/>
+  </g>
+  <g fill="#20e6c5"><circle cx="54" cy="211" r="8"/><circle cx="54" cy="302" r="8"/><circle cx="458" cy="211" r="8"/><circle cx="458" cy="302" r="8"/><circle cx="210" cy="54" r="8"/><circle cx="302" cy="54" r="8"/><circle cx="210" cy="458" r="8"/><circle cx="302" cy="458" r="8"/></g>
+  <path d="m256 139 34 82 83 35-83 35-34 82-35-82-82-35 82-35 35-82Z" fill="#071015" stroke="url(#hot)" stroke-width="11" stroke-linejoin="bevel" filter="url(#cyanGlow)"/>
+  <path d="M256 180v152M180 256h152" stroke="url(#neon)" stroke-width="8" filter="url(#cyanGlow)"/>
+  <rect x="229" y="229" width="54" height="54" fill="#061015" stroke="#b8fff1" stroke-width="7" transform="rotate(45 256 256)"/>
+  <circle cx="256" cy="256" r="10" fill="#eafff9" filter="url(#cyanGlow)"/>
+</svg>

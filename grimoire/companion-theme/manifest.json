@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "The Grimoire — Ember Browser Theme",
+  "short_name": "Grimoire Theme",
+  "description": "An optional dark leather, ember-gold Chrome frame for The Grimoire Dashboard.",
+  "version": "1.0.0",
+  "theme": {
+    "colors": {
+      "frame": [31, 24, 20],
+      "frame_inactive": [16, 17, 18],
+      "toolbar": [24, 23, 22],
+      "tab_text": [255, 231, 182],
+      "tab_background_text": [187, 165, 124],
+      "bookmark_text": [229, 211, 176],
+      "ntp_background": [9, 11, 13],
+      "ntp_text": [234, 217, 185],
+      "button_background": [24, 23, 22]
+    },
+    "tints": {
+      "buttons": [0.11, 0.48, 0.72],
+      "frame": [0.08, 0.36, 0.22],
+      "frame_inactive": [-1, -1, 0.14]
+    },
+    "properties": {
+      "ntp_logo_alternate": 1
+    }
+  }
+}
