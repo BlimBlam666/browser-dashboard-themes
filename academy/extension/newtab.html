@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Academy Command Hall</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/newtab.css">
+  </head>
+  <body data-accent="gold">
+    <a class="skip-link" href="#academy-main">Skip to the Command Hall</a>
+    <div class="hall-world" aria-hidden="true">
+      <div class="stone-vault"></div><div class="rose-window"></div><div class="light-rays"></div><div id="embers" class="embers"></div><div class="vignette"></div>
+    </div>
+
+    <header class="hall-header">
+      <img class="academy-crest" src="assets/academy-crest.svg" alt="">
+      <div class="academy-identity">
+        <span class="eyebrow">OBSIDIAN GATE // KINGDOM OF DRAGONSPINE</span>
+        <h1>ACADEMY OF MERCENARY ARTS</h1>
+        <p>Developing Fighters. Building Warlords.</p>
+      </div>
+      <div class="operator-seal">
+        <span id="operator-rank">PRECEPTOR</span>
+        <strong id="operator-name">BLIMBLAM</strong>
+      </div>
+      <div class="timekeeper" aria-label="Current date and time">
+        <time id="clock">--:--</time><time id="date">Preparing the hall…</time>
+      </div>
+      <button id="open-panel" class="icon-button" type="button" title="Open Field Ledger" aria-label="Open Field Ledger">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5V3Zm3 4h8M8 11h8m-8 4h6"/></svg>
+      </button>
+      <button id="open-options" class="icon-button" type="button" title="Open Hall Settings" aria-label="Open Hall Settings">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2h2l.5 3a8 8 0 0 1 2 .8l2.5-1.7 1.4 1.4-1.7 2.5a8 8 0 0 1 .8 2l3 .5v2l-3 .5a8 8 0 0 1-.8 2l1.7 2.5-1.4 1.4-2.5-1.7a8 8 0 0 1-2 .8l-.5 3h-2l-.5-3a8 8 0 0 1-2-.8L6 19l-1.4-1.4L6.3 15a8 8 0 0 1-.8-2l-3-.5v-2l3-.5a8 8 0 0 1 .8-2L4.6 5.5 6 4.1l2.5 1.7a8 8 0 0 1 2-.8L11 2Zm1 6.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/></svg>
+      </button>
+    </header>
+
+    <main id="academy-main" class="academy-main" tabindex="-1">
+      <section class="archive-search" aria-labelledby="search-heading">
+        <div class="search-mark" aria-hidden="true">⌖</div>
+        <div><span class="kicker">SCRIBE’S LENS</span><h2 id="search-heading">SEARCH THE ARCHIVES OR OPEN A ROAD</h2></div>
+        <form id="search-form" role="search">
+          <label class="visually-hidden" for="search-input">Search the web or enter an address</label>
+          <input id="search-input" type="text" autocomplete="off" spellcheck="false" placeholder="Seek knowledge, a resource, or a destination…">
+          <button type="submit">SEEK</button>
+        </form>
+        <span class="search-key"><kbd>/</kbd> FOCUS</span>
+      </section>
+
+      <section class="directive-banner" aria-labelledby="directive-heading">
+        <div class="banner-finial" aria-hidden="true">◆</div>
+        <div class="directive-heading"><span class="kicker">COMMANDER’S INTENT</span><h2 id="directive-heading">What must the Academy accomplish today?</h2></div>
+        <label class="visually-hidden" for="directive-input">Today’s Academy priority</label>
+        <input id="directive-input" maxlength="220" autocomplete="off" placeholder="Name the one Academy outcome that matters most today…">
+        <span id="directive-status" class="save-status" role="status" aria-live="polite"></span>
+      </section>
+
+      <div class="command-layout">
+        <div class="command-column left-column">
+          <section class="hall-panel schedule-panel" aria-labelledby="schedule-heading">
+            <div class="panel-heading">
+              <div><span class="kicker">ACADEMY RHYTHM</span><h2 id="schedule-heading">COMING UP</h2></div>
+              <button id="add-event" class="round-button" type="button" title="Add an Academy event" aria-label="Add an Academy event">+</button>
+            </div>
+            <div id="event-list" class="event-list" aria-live="polite"></div>
+            <div class="panel-actions compact-actions">
+              <button id="import-calendar" class="text-button" type="button">IMPORT .ICS</button>
+              <button id="open-calendar" class="text-button" type="button">GOOGLE CALENDAR ↗</button>
+              <input id="ics-file" type="file" accept="text/calendar,.ics" hidden>
+            </div>
+          </section>
+
+          <section class="hall-panel doctrine-panel" aria-labelledby="doctrine-heading">
+            <div class="panel-heading">
+              <div><span class="kicker">WHOLE-FIGHTER DOCTRINE</span><h2 id="doctrine-heading">WEEKLY BALANCE</h2></div>
+              <span id="doctrine-week" class="panel-badge">THIS WEEK</span>
+            </div>
+            <p class="panel-intro">Mark each pillar as you train, serve, reflect, or strengthen fellowship.</p>
+            <div id="doctrine-marks" class="doctrine-marks">
+              <button type="button" data-doctrine="body"><i>◆</i><strong>BODY</strong><span></span></button>
+              <button type="button" data-doctrine="craft"><i>⚒</i><strong>CRAFT</strong><span></span></button>
+              <button type="button" data-doctrine="mind"><i>✦</i><strong>MIND</strong><span></span></button>
+              <button type="button" data-doctrine="character"><i>♜</i><strong>CHARACTER</strong><span></span></button>
+              <button type="button" data-doctrine="fellowship"><i>⚔</i><strong>FELLOWSHIP</strong><span></span></button>
+            </div>
+          </section>
+
+          <section class="signal-plaque" aria-labelledby="signal-heading">
+            <span class="kicker">PRECEPTOR’S COUNSEL</span><h2 id="signal-heading" class="visually-hidden">Daily counsel</h2>
+            <blockquote id="daily-signal">Train what you intend to trust under pressure.</blockquote>
+          </section>
+        </div>
+
+        <div class="command-column center-column">
+          <section class="hall-panel tasks-panel" aria-labelledby="tasks-heading">
+            <div class="panel-heading">
+              <div><span class="kicker">CAMPAIGN BOARD</span><h2 id="tasks-heading">ACTIVE QUESTS</h2></div>
+              <span id="task-count" class="panel-badge">0 OPEN</span>
+            </div>
+            <form id="task-form" class="task-form">
+              <label class="visually-hidden" for="task-input">Add an Academy task</label>
+              <input id="task-input" maxlength="140" autocomplete="off" placeholder="Add the next useful action…">
+              <label class="visually-hidden" for="task-category">Task category</label>
+              <select id="task-category"><option>Admin</option><option>Body</option><option>Craft</option><option>Mind</option><option>Character</option><option>Fellowship</option><option>Media</option></select>
+              <button type="submit">ADD</button>
+            </form>
+            <ul id="task-list" class="task-list"></ul>
+            <p id="empty-tasks" class="empty-state">THE BOARD IS CLEAR. CHOOSE THE NEXT WORTHY TASK.</p>
+            <button id="clear-completed" class="text-button" type="button" hidden>CLEAR COMPLETED</button>
+          </section>
+
+          <section class="hall-panel focus-panel" aria-labelledby="focus-heading">
+            <div class="panel-heading">
+              <div><span class="kicker">THE IRON WARD</span><h2 id="focus-heading">PROTECTED FOCUS</h2></div>
+              <button id="focus-length" class="text-button" type="button">25 MIN</button>
+            </div>
+            <div class="focus-body">
+              <div id="focus-ring" class="focus-ring" role="timer" aria-live="polite" aria-label="25 minutes remaining">
+                <svg viewBox="0 0 140 140" aria-hidden="true"><circle class="ring-track" cx="70" cy="70" r="59"></circle><circle id="ring-progress" class="ring-progress" cx="70" cy="70" r="59"></circle></svg>
+                <div><strong id="focus-time">25:00</strong><span id="focus-state">WARD OPEN</span></div>
+              </div>
+              <div class="focus-copy"><p>Close the gate to distraction. Keep one task within the ward.</p><button id="focus-toggle" class="primary-button" type="button">SEAL THE WARD</button><button id="focus-reset" class="secondary-button" type="button">RESET</button></div>
+            </div>
+          </section>
+
+          <section class="creed-panel" aria-label="Preceptor's Creed">
+            <span class="kicker">THE PRECEPTOR’S CREED</span>
+            <p>I forge skill. I build character. I raise Warlords.</p>
+          </section>
+        </div>
+
+        <div class="command-column right-column">
+          <section class="hall-panel resources-panel" aria-labelledby="resources-heading">
+            <div class="panel-heading">
+              <div><span class="kicker">THE GREAT LIBRARY</span><h2 id="resources-heading">RESOURCE HALL</h2></div>
+              <button id="add-resource" class="round-button" type="button" title="Add a resource" aria-label="Add a resource">+</button>
+            </div>
+            <div id="resource-grid" class="resource-grid" aria-live="polite"></div>
+            <button id="discover-bookmarks" class="discovery-button" type="button"><span aria-hidden="true">✧</span><strong>DISCOVER ACADEMY BOOKMARKS</strong><small>Optional local scan; nothing leaves this device</small></button>
+          </section>
+
+          <section class="hall-panel journal-panel" aria-labelledby="journal-heading">
+            <div class="panel-heading">
+              <div><span class="kicker">WAR JOURNAL</span><h2 id="journal-heading">AFTER-ACTION REVIEW</h2></div>
+              <button id="new-aar" class="round-button" type="button" title="Write an after-action review" aria-label="Write an after-action review">+</button>
+            </div>
+            <div id="latest-aar" class="latest-aar">
+              <p class="empty-state">NO ENTRY YET. RECORD THE LESSON WHILE IT IS WARM.</p>
+            </div>
+            <button id="open-ledger" class="secondary-button wide-button" type="button">OPEN FIELD LEDGER</button>
+          </section>
+        </div>
+      </div>
+
+      <footer class="hall-footer"><span>SAFE • HONEST • TEACHABLE • USEFUL • REFLECTIVE</span><i aria-hidden="true">⚔</i><span><kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>A</kbd> OPENS THE HALL</span></footer>
+    </main>
+
+    <dialog id="resource-dialog" class="academy-dialog" aria-labelledby="resource-dialog-title">
+      <form id="resource-form" method="dialog">
+        <span class="dialog-mark" aria-hidden="true">✧</span><span class="kicker">RESOURCE HALL</span><h2 id="resource-dialog-title">Add a resource</h2>
+        <input id="resource-id" type="hidden"><input id="resource-platform" type="hidden">
+        <label for="resource-name">Name</label><input id="resource-name" maxlength="48" required placeholder="Academy resource">
+        <label for="resource-url">Web address</label><input id="resource-url" type="url" maxlength="500" required placeholder="https://example.com">
+        <div class="field-pair"><label>Category<select id="resource-kind"><option>Resource</option><option>Training</option><option>Courses</option><option>Archive</option><option>Administration</option><option>Official</option><option>Calendar</option><option>Media</option><option>Social</option><option>Support</option></select></label><label>Emblem<select id="resource-glyph"><option value="book">Book</option><option value="sword">Sword</option><option value="scroll">Scroll</option><option value="tower">Hall</option><option value="shield">Shield</option><option value="compass">Compass</option><option value="scales">Scales</option><option value="calendar">Calendar</option><option value="banner">Banner</option><option value="people">Fellowship</option><option value="eye">Lens</option><option value="coin">Coin</option></select></label></div>
+        <p id="resource-error" class="form-error" role="alert"></p>
+        <div class="dialog-actions"><button id="delete-resource" class="danger-button" type="button" hidden>REMOVE</button><span></span><button id="cancel-resource" class="secondary-button" type="button">CANCEL</button><button class="primary-button" type="submit">SAVE</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="event-dialog" class="academy-dialog" aria-labelledby="event-dialog-title">
+      <form id="event-form" method="dialog">
+        <span class="dialog-mark" aria-hidden="true">◈</span><span class="kicker">ACADEMY RHYTHM</span><h2 id="event-dialog-title">Add an event</h2>
+        <label for="event-title">Event</label><input id="event-title" maxlength="100" required placeholder="Academy workshop">
+        <div class="field-pair"><label>Date<input id="event-date" type="date" required></label><label>Time<input id="event-time" type="time" required></label></div>
+        <label for="event-location">Location</label><input id="event-location" maxlength="100" placeholder="Training Yard">
+        <div class="dialog-actions"><span></span><button id="cancel-event" class="secondary-button" type="button">CANCEL</button><button class="primary-button" type="submit">ADD EVENT</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="aar-dialog" class="academy-dialog aar-dialog" aria-labelledby="aar-dialog-title">
+      <form id="aar-form" method="dialog">
+        <span class="dialog-mark" aria-hidden="true">✒</span><span class="kicker">WAR JOURNAL</span><h2 id="aar-dialog-title">After-Action Review</h2>
+        <div class="field-pair"><label>Date<input id="aar-date" type="date" required></label><label>Activity<input id="aar-activity" maxlength="100" required placeholder="F200 practice"></label></div>
+        <label for="aar-objective">What was the objective?</label><textarea id="aar-objective" maxlength="500" rows="2"></textarea>
+        <label for="aar-success">What worked?</label><textarea id="aar-success" maxlength="1200" rows="3"></textarea>
+        <label for="aar-friction">What created friction?</label><textarea id="aar-friction" maxlength="1200" rows="3"></textarea>
+        <label for="aar-lesson">What did the field teach?</label><textarea id="aar-lesson" maxlength="1200" rows="3"></textarea>
+        <label for="aar-next">What is the next useful action?</label><textarea id="aar-next" maxlength="500" rows="2"></textarea>
+        <div class="dialog-actions"><span></span><button id="cancel-aar" class="secondary-button" type="button">CANCEL</button><button class="primary-button" type="submit">ENTER IN CHRONICLE</button></div>
+      </form>
+    </dialog>
+
+    <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <script type="module" src="scripts/newtab.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Academy of Mercenary Arts — Obsidian & Gold Theme",
+  "short_name": "Academy Theme",
+  "description": "An optional obsidian, crimson, and heraldic-gold Chrome frame for the Academy Command Hall.",
+  "version": "1.0.0",
+  "theme": {
+    "colors": {
+      "frame": [12, 16, 18], "frame_inactive": [8, 10, 11], "toolbar": [20, 23, 23],
+      "tab_text": [255, 231, 160], "tab_background_text": [170, 149, 105], "bookmark_text": [225, 210, 175],
+      "ntp_background": [8, 11, 13], "ntp_text": [233, 223, 198], "button_background": [22, 25, 25]
+    },
+    "tints": {"buttons": [0.11, 0.56, 0.68], "frame": [0.1, 0.22, 0.08], "frame_inactive": [-1, -1, 0.05]},
+    "properties": {"ntp_logo_alternate": 1}
+  }
+}

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>Enter the Academy</title><link rel="stylesheet" href="styles/base.css"><link rel="stylesheet" href="styles/onboarding.css"></head>
+  <body data-accent="gold">
+    <div class="threshold" aria-hidden="true"><div class="gate left"></div><div class="gate right"></div><div class="standards"></div></div>
+    <main class="onboarding-card"><img src="assets/academy-crest.svg" alt=""><span class="kicker">OBSIDIAN GATE // KINGDOM OF DRAGONSPINE</span><h1>ENTER THE ACADEMY</h1><p class="motto">Developing Fighters. Building Warlords.</p><p class="lead">Your private command hall joins training, operations, resources, calendar events, campaign tasks, focus, and after-action reviews.</p>
+      <form id="onboarding-form"><div class="field-pair"><label>Operator name<input id="onboarding-name" maxlength="40" value="BlimBlam" required></label><label>Academy rank<select id="onboarding-rank"><option>Recruit</option><option>Cadet</option><option>Aspirant</option><option>Specialist</option><option>Preceptor Candidate</option><option selected>Preceptor</option></select></label></div>
+        <fieldset><legend>Choose the hall’s light</legend><div class="onboarding-accents"><label class="gold"><input type="radio" name="onboarding-accent" value="gold" checked><span><i></i>GOLD</span></label><label class="crimson"><input type="radio" name="onboarding-accent" value="crimson"><span><i></i>CRIMSON</span></label><label class="forest"><input type="radio" name="onboarding-accent" value="forest"><span><i></i>FOREST</span></label><label class="sapphire"><input type="radio" name="onboarding-accent" value="sapphire"><span><i></i>SAPPHIRE</span></label></div></fieldset>
+        <div class="rhythm-choice"><span class="kicker">INITIAL ACADEMY RHYTHM</span><label><input id="onboarding-training" type="checkbox" checked><span><strong>Wednesday Academy Training</strong><small>7:00–9:00 PM</small></span></label><label><input id="onboarding-park" type="checkbox" checked><span><strong>Sunday Obsidian Gate Park</strong><small>12:00–4:00 PM</small></span></label></div>
+        <div class="privacy-seal"><span aria-hidden="true">♜</span><p><strong>THE GATE IS KEPT.</strong> No account, analytics, ads, remote code, page-reading scripts, or host permissions. Calendar files and bookmarks are read only when you explicitly choose.</p></div>
+        <button class="primary-button enter-button" type="submit">OPEN THE COMMAND HALL →</button>
+      </form><p class="small-print">ALL SETTINGS REMAIN EDITABLE. THE ACADEMY SERVES THE FIGHTER.</p>
+    </main><script type="module" src="scripts/onboarding.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>Field Ledger</title><link rel="stylesheet" href="styles/base.css"><link rel="stylesheet" href="styles/sidepanel.css"></head>
+  <body data-accent="gold">
+    <header class="ledger-header">
+      <img src="assets/academy-crest.svg" alt=""><div><span class="kicker">ACADEMY SIDECAR</span><h1>FIELD LEDGER</h1><p id="ledger-operator">PRECEPTOR BLIMBLAM</p></div>
+      <button id="ledger-newtab" class="icon-button" type="button" title="Open Command Hall" aria-label="Open Command Hall"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4V4Zm4 4h8m-8 4h8m-8 4h5"/></svg></button>
+    </header>
+    <nav class="ledger-tabs" aria-label="Field Ledger sections">
+      <button class="ledger-tab active" type="button" data-panel="tasks" aria-selected="true">QUESTS</button>
+      <button class="ledger-tab" type="button" data-panel="journal" aria-selected="false">JOURNAL</button>
+      <button class="ledger-tab" type="button" data-panel="focus" aria-selected="false">WARD</button>
+    </nav>
+    <main>
+      <section id="panel-tasks" class="ledger-view active" aria-labelledby="ledger-tasks-title">
+        <div class="ledger-heading"><div><span class="kicker">CAMPAIGN BOARD</span><h2 id="ledger-tasks-title">ACTIVE QUESTS</h2></div><span id="ledger-task-count" class="panel-badge">0</span></div>
+        <form id="ledger-task-form" class="ledger-task-form"><label class="visually-hidden" for="ledger-task-input">Add a quest</label><input id="ledger-task-input" maxlength="140" autocomplete="off" placeholder="Next useful action…"><button type="submit">+</button></form>
+        <ul id="ledger-task-list" class="task-list"></ul><p id="ledger-empty-tasks" class="empty-state">THE CAMPAIGN BOARD IS CLEAR.</p>
+      </section>
+      <section id="panel-journal" class="ledger-view" aria-labelledby="ledger-journal-title" hidden>
+        <div class="ledger-heading"><div><span class="kicker">FIELD NOTES</span><h2 id="ledger-journal-title">SCRIBE’S PAGE</h2></div><span id="note-status" class="save-status" role="status" aria-live="polite"></span></div>
+        <label class="visually-hidden" for="scratchpad">Academy field notes</label><textarea id="scratchpad" maxlength="12000" placeholder="Capture observations, plans, names, drills, and passing ideas…"></textarea>
+        <div class="note-footer"><span id="note-count">0 / 12000</span><button id="clear-note" class="text-button" type="button">CLEAR PAGE</button></div>
+        <div class="ledger-divider"><span>AFTER-ACTION REVIEW</span></div>
+        <form id="quick-aar-form" class="quick-aar-form"><label>Activity<input id="quick-aar-activity" maxlength="100" required placeholder="Training or event"></label><label>Field lesson<textarea id="quick-aar-lesson" maxlength="1200" rows="2" placeholder="What did the field teach?"></textarea></label><label>Next action<input id="quick-aar-next" maxlength="500" placeholder="What changes next?"></label><button class="primary-button" type="submit">ENTER IN CHRONICLE</button></form>
+        <div id="ledger-aar-list" class="ledger-aar-list"></div>
+      </section>
+      <section id="panel-focus" class="ledger-view" aria-labelledby="ledger-focus-title" hidden>
+        <div class="ledger-heading"><div><span class="kicker">THE IRON WARD</span><h2 id="ledger-focus-title">PROTECTED FOCUS</h2></div></div>
+        <div class="ledger-focus" role="timer" aria-live="polite"><span id="ledger-focus-time">25:00</span><small id="ledger-focus-state">WARD OPEN</small></div>
+        <div class="ledger-focus-actions"><button id="ledger-focus-toggle" class="primary-button" type="button">SEAL THE WARD</button><button id="ledger-focus-reset" class="secondary-button" type="button">RESET</button></div>
+        <div class="duration-row" aria-label="Focus duration"><button type="button" data-minutes="15">15</button><button type="button" data-minutes="25" class="active">25</button><button type="button" data-minutes="45">45</button><button type="button" data-minutes="60">60</button></div>
+        <blockquote id="ledger-signal">Train what you intend to trust under pressure.</blockquote>
+      </section>
+    </main>
+    <footer class="ledger-footer"><span>DEVELOPING FIGHTERS. BUILDING WARLORDS.</span><button id="ledger-options" class="text-button" type="button">HALL SETTINGS</button></footer>
+    <div id="ledger-toast" class="toast-region" aria-live="polite"></div><script type="module" src="scripts/sidepanel.js"></script>
+  </body>
+</html>
